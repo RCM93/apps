@@ -43,7 +43,7 @@ jobs:
   deploy:
     name: OPS
     runs-on: ubuntu-latest
-    needs: bui  ld
+    needs: build
 
     env:
       VERSION: ${{ needs.build.outputs.RELEASE_VERSION }}
