@@ -67,3 +67,11 @@ jobs:
 
           kustomize build . > apps.yml
           cat apps.yml
+
+        - name: Commit files
+        run: |
+          git config --local user.email "deploy-bot@stotylabs.dev"
+          git config --local user.name "Storylabs deploy-Bot"
+					git add .
+          git commit -am "New image version, branch: staging, tag: ${{ env.VERSION }}"
+          git push --force origin
