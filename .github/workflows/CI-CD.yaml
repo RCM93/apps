@@ -63,9 +63,7 @@ jobs:
         run: |
           cd public-api/overlays/stage
 
-					# Cambia la versión de la imagen
           kustomize edit set image KUSTOMIZE-DEFINED=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
 
-          # Optional: check yaml files Kustomized
           kustomize build . > apps.yml
           cat apps.yml
