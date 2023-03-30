@@ -9,7 +9,7 @@ env:
   IMAGE_NAME: kubelabs_publicapi2
   OPS_BRANCH: main
   OPS_REPO: RCM93/ops
-  VERSION: "4.0.0"
+  VERSION: "5.0.0"
 
 jobs:
 
