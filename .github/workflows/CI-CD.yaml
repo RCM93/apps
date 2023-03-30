@@ -2,14 +2,14 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "stage" , "main" ]
+    branches: [ "stage" ]
 
 env:
   REGISTRY: rmsql248
   IMAGE_NAME: kubelabs_publicapi2
   OPS_BRANCH: main
   OPS_REPO: RCM93/ops
-  VERSION: "3.0.0"
+  VERSION: "4.0.0"
 
 jobs:
 
