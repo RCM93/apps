@@ -9,7 +9,7 @@ env:
   IMAGE_NAME: kubelabs_publicapi2
   OPS_BRANCH: main
   OPS_REPO: RCM93/ops
-  VERSION: "3.0.0"
+  VERSION: "3.1.0"
 
 jobs:
 
@@ -55,7 +55,7 @@ jobs:
 
       - name: Update Kubernetes resources
         run: |
-          cd public-api/overlays/stage
+          cd public-api/overlays/production
 
           kustomize edit set image KUSTOMIZE-DEFINED=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
 
@@ -67,5 +67,5 @@ jobs:
           git config --local user.email "deploy-bot@stotylabs.dev"
           git config --local user.name "Storylabs deploy-Bot"
           git add .
-          git commit -am "New image version, branch: staging, tag: ${{ env.VERSION }}"
+          git commit -am "New image version, branch: production, tag: ${{ env.VERSION }}"
           git push --force origin
