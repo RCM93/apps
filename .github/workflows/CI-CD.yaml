@@ -2,7 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "stage" , "main" ]
+    branches: [ "main" ]
 
 env:
   REGISTRY: rmsql248
